@@ -1,0 +1,4 @@
+rootProject.name = 'action-speaks-louder'
+
+include('batch-insert-100k-records')
+
