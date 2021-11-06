@@ -14,6 +14,7 @@
 ```
 
 ## APIs
+![APS to performance test 100k insertion](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/zpc888/action-speaks-louder/master/batch-insert-100k-records/docs/api-class-view.puml)
 
 ## Test results
 ### MySQL databases (80K)
@@ -30,5 +31,5 @@ a `split` help method to `List<List<T> split(<List<T> origin, int chunkSize)`
 - normal insert one by one (i.e. without addBatch), it is about 1.7 seconds
  
 **Analysis:**
-- Because it is in memory sharing the same process resources, connection won't be expensive.
-- String concatenation may be more expensive than connection, which may just a local method call
+- Because h2-in-mem is in memory sharing the same process resources, connection won't be expensive.
+- String concatenation may be more expensive than connection, which may be just a local method call

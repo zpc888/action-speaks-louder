@@ -1,0 +1,70 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+package api #palegreen {
+class BatchInsertInOneShot <API> {
+    METHOD = GET
+    URI = /perf-tests/batch-insert-one-shot
+}
+
+class BatchInsert1X1 <API> {
+    METHOD = GET
+    URI = /perf-tests/batch-insert-1-by-1
+}
+
+class NormalInsert1X1 <API> {
+    METHOD = GET
+    URI = /perf-tests/normal-insert-1-by-1
+}
+
+class AllInOne <API> {
+    METHOD = GET
+    URI = /perf-tests/all-in-one
+}
+}
+
+package params #lightgrey {
+  class QueryParams {
+     size optional default=100_000
+  }
+}
+
+package response #lightblue {
+   class BatchInOneShotReport {
+       size: int
+       batch-insert-one-shot-duration: Duration
+       deleted-history-count: int
+   }
+   class BatchIn1x1Report {
+       size: int
+       batch-insert-1-by-1-duration: Duration
+       deleted-history-count: int
+   }
+   class NormalIn1x1Report {
+       size: int
+       normal-insert-1-by-1-duration: Duration
+       deleted-history-count: int
+   }
+   class AllInOneReport {
+       size: int
+       deleted-history-count: int
+       normal-insert-1-by-1-duration: Duration
+       batch-insert-1-by-1-duration: Duration
+       batch-insert-one-shot-duration: Duration
+   }
+}
+
+BatchInsertInOneShot -left-> QueryParams
+BatchInsertInOneShot -right-> BatchInOneShotReport
+
+BatchInsert1X1 --> QueryParams
+BatchInsert1X1 --> BatchIn1x1Report
+
+NormalInsert1X1 --> QueryParams
+NormalInsert1X1 --> NormalIn1x1Report
+
+AllInOne --> QueryParams
+AllInOne --> AllInOneReport
+
+
+@enduml

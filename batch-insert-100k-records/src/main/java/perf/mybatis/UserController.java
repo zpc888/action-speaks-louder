@@ -80,7 +80,7 @@ public class UserController {
         List<User> users = prepareUsers(size);
         int deletedCount = userService.deleteAllUsers();
         Map<String, Object> ret = new HashMap<>();
-        ret.put("deletedHistoryCount", deletedCount);
+        ret.put("deleted-history-count", deletedCount);
         ret.put("size", size);
         ret.put(prefix + "-duration", timeInserting(users, howToInsert));
         return ResponseEntity.ok(Mono.just(ret));

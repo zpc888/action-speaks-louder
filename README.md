@@ -15,7 +15,7 @@ repeating:
     for (Record r: records) {
         ps.set..(1, r.xxx);
 ...
-        ps.addBatch
+        ps.addBatch();
         ps.clearParameters();
 }
     int[] results = ps.executeBatch();
