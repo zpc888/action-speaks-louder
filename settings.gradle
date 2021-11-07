@@ -1,4 +1,4 @@
-rootProject.name = 'action-speaks-louder'
+rootProject.name = 'actions-speak-louder'
 
 include('batch-insert-100k-records')
 
