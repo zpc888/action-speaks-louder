@@ -4,22 +4,22 @@
 package api #palegreen {
 class BatchInsertInOneShot <API> {
     METHOD = GET
-    URI = /perf-tests/batch-insert-one-shot
+    URI = /perf-tests/mybatis/batch-insert-one-shot
 }
 
 class BatchInsert1X1 <API> {
     METHOD = GET
-    URI = /perf-tests/batch-insert-1-by-1
+    URI = /perf-tests/mybatis/batch-insert-1-by-1
 }
 
 class NormalInsert1X1 <API> {
     METHOD = GET
-    URI = /perf-tests/normal-insert-1-by-1
+    URI = /perf-tests/mybatis/normal-insert-1-by-1
 }
 
 class AllInOne <API> {
     METHOD = GET
-    URI = /perf-tests/all-in-one
+    URI = /perf-tests/mybatis/all-in-one
 }
 }
 

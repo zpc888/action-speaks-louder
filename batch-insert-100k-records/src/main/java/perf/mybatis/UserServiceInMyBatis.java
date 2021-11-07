@@ -11,7 +11,7 @@ import java.util.List;
 
 @AllArgsConstructor
 @Service
-public class UserService {
+public class UserServiceInMyBatis {
     private final UserMapper userMapper;
     private final SqlSessionFactory sqlSessionFactory;
 
